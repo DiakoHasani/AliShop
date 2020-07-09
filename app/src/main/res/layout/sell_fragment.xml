@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layoutDirection="rtl"
+    android:textDirection="rtl">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolBar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorPrimary"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/toolBar">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/filters"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardElevation="2dp"
+            android:clipToPadding="false"
+            app:cardUseCompatPadding="false"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:paddingTop="6dp"
+                android:paddingBottom="6dp">
+
+                <CheckBox
+                    android:id="@+id/chk_Store1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/Store1"
+                    android:fontFamily="@font/vazir"
+                    android:textSize="14dp"
+                    android:buttonTint="@color/colorPrimary"/>
+
+                <CheckBox
+                    android:id="@+id/chk_Store2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/Store2"
+                    android:fontFamily="@font/vazir"
+                    android:layout_marginRight="20dp"
+                    android:textSize="14dp"
+                    android:buttonTint="@color/colorPrimary"/>
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/Recycler"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone"
+            android:layout_below="@id/filters"/>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/btn_Reload"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            app:cardBackgroundColor="@color/colorAccent"
+            android:clickable="true"
+            android:theme="@style/AppTheme.MyRipple"
+            app:cardElevation="4dp"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/vazir"
+                android:textSize="16dp"
+                android:textColor="@color/colorWhite"
+                android:text="@string/Reload"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:paddingRight="10dp"
+                android:paddingLeft="10dp"/>
+
+        </androidx.cardview.widget.CardView>
+
+        <com.facebook.shimmer.ShimmerFrameLayout
+            android:id="@+id/Loading"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_below="@id/filters">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <include layout="@layout/recycler_product"/>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="5dp"/>
+
+                <include layout="@layout/recycler_product"/>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="5dp"/>
+
+                <include layout="@layout/recycler_product"/>
+
+            </LinearLayout>
+
+        </com.facebook.shimmer.ShimmerFrameLayout>
+
+    </RelativeLayout>
+
+</RelativeLayout>

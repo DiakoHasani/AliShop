@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/background"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#55000000"
+    android:textDirection="rtl"
+    android:layoutDirection="rtl"
+    android:clickable="true">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:clipToPadding="false"
+        app:cardUseCompatPadding="false"
+        android:layout_marginRight="15dp"
+        android:layout_marginLeft="15dp"
+        app:cardBackgroundColor="@color/colorWhite"
+        app:cardElevation="4dp"
+        app:cardCornerRadius="5dp"
+        android:clickable="true">
+
+        <com.facebook.shimmer.ShimmerFrameLayout
+            android:id="@+id/Loading"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/lbl_Title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="20dp"
+                    android:textColor="@color/colorBlack"
+                    android:fontFamily="@font/vazir"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:singleLine="true"
+                    android:paddingRight="24dp"/>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:background="@color/colorGrayDark"/>
+
+                <EditText
+                    android:id="@+id/txt_Fee"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="24dp"
+                    android:inputType="number"
+                    android:hint="@string/FeeSell"/>
+
+                <EditText
+                    android:id="@+id/txt_Count"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="24dp"
+                    android:inputType="number"
+                    android:hint="@string/Count"/>
+
+                <TextView
+                    android:id="@+id/lbl_Total"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:paddingRight="28dp"
+                    android:fontFamily="@font/vazir"
+                    android:textColor="@color/colorSubTitle"
+                    android:textSize="14dp"/>
+
+                <RadioGroup
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="20dp">
+
+                    <RadioButton
+                        android:id="@+id/rdo_Store1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/Store1"
+                        android:fontFamily="@font/vazir"
+                        android:paddingRight="5dp"/>
+
+                    <RadioButton
+                        android:id="@+id/rdo_Store2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/Store2"
+                        android:fontFamily="@font/vazir"
+                        android:paddingRight="5dp"
+                        android:layout_marginRight="20dp"/>
+
+                </RadioGroup>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:background="@color/colorGrayDark"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="left"
+                    android:paddingLeft="8dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="8dp">
+
+                    <Button
+                        android:id="@+id/btn_Cancel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/vazir"
+                        android:textSize="14dp"
+                        android:text="@string/Cancel"
+                        android:textColor="@color/colorPrimary"
+                        android:background="@android:color/transparent"
+                        android:layout_marginLeft="8dp"/>
+
+                    <Button
+                        android:id="@+id/btn_Sell"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/vazir"
+                        android:textSize="14dp"
+                        android:text="@string/Sell"
+                        android:textColor="@color/colorPrimary"
+                        android:background="@android:color/transparent"/>
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+        </com.facebook.shimmer.ShimmerFrameLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>

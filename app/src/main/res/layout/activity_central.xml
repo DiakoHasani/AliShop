@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:textDirection="rtl"
+    android:layoutDirection="rtl">
+
+    <!--محصولات-->
+    <FrameLayout
+        android:id="@+id/Frame_Product"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/bottomBar"
+        android:visibility="invisible"/>
+
+    <!--فروش-->
+    <FrameLayout
+        android:id="@+id/Frame_Sell"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/bottomBar"
+        android:visibility="invisible"/>
+
+    <!--افزودن-->
+    <FrameLayout
+        android:id="@+id/Frame_Add"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/bottomBar"
+        android:visibility="invisible"/>
+
+    <!--انتقال-->
+    <FrameLayout
+        android:id="@+id/Frame_Transfer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/bottomBar"
+        android:visibility="invisible"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_above="@id/bottomBar"
+        android:background="@drawable/shadow_bottombar"/>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        app:menu="@menu/bottom_bar_menu"
+        app:itemTextAppearanceActive="@style/Style_Text_BottomBar"
+        android:elevation="8dp"/>
+
+</RelativeLayout>

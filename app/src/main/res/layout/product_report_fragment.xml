@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/colorWhite"
+    android:clickable="true"
+    android:layoutDirection="rtl"
+    android:textDirection="rtl">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/mToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorPrimary"/>
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/mToolbar">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <com.facebook.shimmer.ShimmerFrameLayout
+                    android:id="@+id/Loading"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:cardUseCompatPadding="false"
+                        android:clipToPadding="false">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_marginTop="10dp">
+
+                            <com.toptoche.searchablespinnerlibrary.SearchableSpinner
+                                android:id="@+id/spinner_search"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:textDirection="rtl"
+                                android:layoutDirection="rtl"
+                                android:spinnerMode="dialog"/>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:weightSum="2"
+                                android:paddingRight="5dp"
+                                android:paddingLeft="5dp"
+                                android:layout_marginTop="10dp">
+
+                                <EditText
+                                    android:id="@+id/txt_FromDate"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:hint="@string/FromDate"/>
+
+                                <EditText
+                                    android:id="@+id/txt_ToDate"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:hint="@string/ToDate"/>
+
+                            </LinearLayout>
+
+                            <androidx.cardview.widget.CardView
+                                android:id="@+id/btn_Search"
+                                android:layout_width="match_parent"
+                                android:layout_height="36dp"
+                                android:layout_marginTop="20dp"
+                                android:layout_marginLeft="5dp"
+                                android:layout_marginRight="5dp"
+                                android:layout_marginBottom="10dp"
+                                app:cardBackgroundColor="@color/colorAccent"
+                                app:cardCornerRadius="20dp"
+                                android:theme="@style/AppTheme.MyRipple"
+                                android:clickable="true">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:text="@string/Search"
+                                    android:gravity="center"
+                                    android:textColor="@color/colorWhite"
+                                    android:textSize="14dp"
+                                    android:fontFamily="@font/vazir"
+                                    android:textStyle="bold"/>
+
+                            </androidx.cardview.widget.CardView>
+
+                        </LinearLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                </com.facebook.shimmer.ShimmerFrameLayout>
+
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/Recycler"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
+
+            </LinearLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/btn_Reload"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        app:cardBackgroundColor="@color/colorAccent"
+        android:clickable="true"
+        android:theme="@style/AppTheme.MyRipple"
+        app:cardElevation="4dp"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/vazir"
+            android:textSize="16dp"
+            android:textColor="@color/colorWhite"
+            android:text="@string/Reload"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:paddingRight="10dp"
+            android:paddingLeft="10dp"/>
+
+    </androidx.cardview.widget.CardView>
+
+
+</RelativeLayout>

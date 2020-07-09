@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/BottomBar_Product"
+        android:title="@string/Products"
+        android:icon="@drawable/ic_store"/>
+
+    <item
+        android:id="@+id/BottomBar_Sell"
+        android:title="@string/Sell"
+        android:icon="@drawable/ic_shopping"/>
+
+    <item
+        android:id="@+id/BottomBar_Add"
+        android:title="@string/Add"
+        android:icon="@drawable/ic_add"/>
+
+    <item
+        android:id="@+id/BottomBar_Send"
+        android:title="@string/Send"
+        android:icon="@drawable/ic_send"/>
+
+</menu>
